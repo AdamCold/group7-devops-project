@@ -16,8 +16,8 @@ jobs:
       - name: Build with Maven
         run: mvn package
       - name: Build
-        run: docker build -t se_methods .
+        run: docker build -t group7-devops-project .
       - name: Run image
-        run: docker run --name semcontainer se_methods
+        run: docker run --name group7-devops-project-container group7-devops-project
       - name: view logs
-        run: docker logs semcontainer
+        run: docker logs group7-devops-project-container
