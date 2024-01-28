@@ -15,9 +15,9 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn package
-      - name: Build Docker Image
-        run: docker build -t group7-devops-project-image .
+      - name: Build
+        run: docker build -t se_methods .
       - name: Run image
-        run: docker run --name group7-devops-project-container -d group7-devops-project-image
+        run: docker run --network se-methods --name semcontainer se_methods
       - name: view logs
-        run: docker logs group7-devops-project-container
+        run: docker logs semcontainer
